@@ -10,4 +10,8 @@ c/makefile/test
 !c/**/Makefile*
 
 #Java
-**/*.class
+**/*.clas
+
+#Scala
+scala/**/project
+scala/**/target
