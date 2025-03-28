@@ -47,8 +47,6 @@ echo "## Checking listener and network status"
 lsnrctl status
 netstat -ntlp
 
-echo
-echo "## Install Done!!"
 
 echo 
 echo "## oracle setup"
