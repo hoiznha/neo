@@ -1,0 +1,10 @@
+use test
+db.users.drop()
+
+db.users.insert({userid:"1001", name:"ALLEN",city:"Seoul", sex:"Female",age:20})
+db.users.insert({userid:"1001", name:"BLAKE",city:"busan", sex:"Female",age:22})
+db.users.insert({userid:"1001", name:"CLARK",city:"Kwangju", sex:"male",age:23})
+db.users.insert({userid:"1001", name:"DAVID",city:"incheon", sex:"male",age:24})
+db.users.insert({userid:"1001", name:"ROLLEN",city:"Seoul", sex:"Female",age:23})
+
+db.users.find()
