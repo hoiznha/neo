@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz7</title>
+</head>
+<body>
+    <h3>Date 객체로 경과 시간 알아내기</h3>
+    <hr />
+    <script>
+        let now = new Date();
+        document.write(`현재시간: ${now} <br>`);
+        let old = new Date(2022,7,1,9,0,0);;
+        document.write(`기준시간: ${old} <br>`);
+        let diff = now.getTime() - old.getTime();
+        let hour = (diff / 1000 / 60 / 60);
+        let min = (diff / 1000 / 60) ;
+        let sec = (diff / 1000) ;
+        document.write(`경과시간(시): ${Math.round(hour)} <br>`);
+        document.write(`경과시간(분): ${Math.round(min)} <br>`);
+        document.write(`경과시간(초): ${Math.round(sec)} <br>`);
+    </script>
+</body>
+</html>

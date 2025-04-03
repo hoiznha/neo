@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz5</title>
+</head>
+<body>
+    <h3>누적합산하여 20보다 크면 종료 </h3>
+    <hr  />
+    <script>
+        let n = prompt("Put the random number 1~5.");
+        n = parseInt(n);
+        let sum=0;
+        let array = new Array(n);
+        while (sum<20){
+            array[i]=Math.floor(Math.random()*5+1);
+            sum += array[i];
+            i++;
+        }
+        document.write(array + " ");
+        document.write(sum + "<br>");
+        document.write("array" + i);
+        
+    </script>
+</body>
+</html>
