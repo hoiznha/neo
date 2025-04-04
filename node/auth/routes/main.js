@@ -56,4 +56,14 @@ app.post('/delete', (req, res) => {
     res.redirect('/select');
 })
 
+//register
+app.post('/register', (req, res) => {
+    const {id,pw} = req.body;
+    const result = connection.query('insert into user values(?,?)', [id,pw]);
+    console.log(result);
+    res.redirect('/selectQuery?id=' + req.body.id);
+})
+
+
+
 module.exports = app;
