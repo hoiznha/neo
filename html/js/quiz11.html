@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임 2</title>
+    <script>
+            function rspGame(radio){
+                let rsp_map = { 1: "가위", 2: "바위", 3: "보" };
+                let radio = document.getElementsByName("rsp");
+                
+                if (radio == 1 || radio ==2 || radio==3){
+                 let com = Math.floor(Math.random() * 3 + 1);
+                    let verdict = user - com;
+                if ( verdict == -2 || verdict == 1){
+                    alert("당신이 이겼습니다!");
+                } else if (verdict == 2 || verdict == -1)
+                    alert("당신이 졌습니다...");
+                else alert("무승부입니다.");     
+            } else {
+                alert("다시 입력하세요");
+            }       
+        }
+    </script>
+</head>
+<body>
+    <h3>가위 바위 보 게임 ver2</h3>
+    <hr />
+        <form>
+            <input type="radio" value ="1" name="rsp" >가위</input>
+            <input type="radio" value ="2" name="rsp" >바위</input>
+            <input type="radio" value ="3" name="rsp" >보</input>
+            <p>
+            <input type = "button" value ="Game Go!!" onclick = "rspGame()" />
+            </p>
+        </form>
+</body>
+</html>
