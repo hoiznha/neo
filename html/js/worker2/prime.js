@@ -9,7 +9,7 @@ function Prime(num){
 self.onmessage = function (e){
     // Work Task 로 부터 전달받은 숫자
     let number = e.data.input;
-
+    console.log("number : " + number);
     output = number;
     output += (Prime(number)) ? "is PrimeNumber" : "is Not PrimeNumber";
     self.postMessage(output);

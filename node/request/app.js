@@ -12,7 +12,7 @@ app.get('/hello', (req, res) => {
 })
 
 let option1 = 'http://192.168.1.51:8000/hello';
-app.get('rhello', function(req,res){
+app.get('/rhello', function(req,res){
     request(option1, {json:true}, function(err,result,body){
         if(err){
             console.log(err);
@@ -28,7 +28,7 @@ app.get('/data', function(req,res){
 })
 
 let option2 = 'http://192.168.1.51:8000/data';
-app.get('rdata', function(req,res){
+app.get('/rdata', function(req,res){
     request(option2, {json:true}, function(err,result,body){
         if(err){
             return console.log(err);
@@ -39,5 +39,5 @@ app.get('rdata', function(req,res){
 })
 
 app.listen(8000, function() {
-    console.log('Server is started~!! ' + app.get('port'));
+    console.log('Server is started~!!  - Port : 8000' );
 });

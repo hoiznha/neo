@@ -10,6 +10,7 @@ onmessage = function (e){
         }  
     }
     output = input
+    console.log("number : " + input);
     output += (input == i) ? "is PrimeNumber" : "is Not PrimeNumber";
     postMessage(output);
 }
