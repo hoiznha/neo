@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #리스트 항목을 꺼내서 제곱값을 구해서 출력하는 제너레이터
-from neo.python.dataProject.timer import timer
+from neo.python.pythonBasic.timer import timer
 
 mynum = [1,2,3,4,5]
 
