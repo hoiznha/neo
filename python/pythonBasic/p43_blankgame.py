@@ -36,7 +36,7 @@ while True:
         caty -= 5
         if caty == 10:
             direction = 'right'
-    DISPLAYSURF.blit(catImag,(catx,caty))
+    DISPLAYSURF.blit(catImg,(catx,caty))
 
     for event in pygame.event.get():
         if event.type == QUIT:
