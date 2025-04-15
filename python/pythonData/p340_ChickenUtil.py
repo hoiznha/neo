@@ -1,9 +1,6 @@
-import time
+import time,datetime,ssl
 import pandas as pd
 import urllib.request
-import response
-import datetime
-import ssl
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -27,12 +24,12 @@ class ChickenStore():
             return None
         else:
             return BeautifulSoup(self.soup,'html.parser')
-    def get_request(self):
+    def get_request_url(self):
         request = urllib.request.Request(self.url)
         try:
             context = ssl._create_unverified_context()
-            reponse = urllib.request.urlopen(request,context=context)
-            if response.getcode() != 200:
+            response = urllib.request.urlopen(request,context=context)
+            if response.getcode() == 200:
                 if self.brandName != 'pelicana':
                     return response.read().decode(self.myencoding)
                 else:
@@ -44,11 +41,12 @@ class ChickenStore():
             print(msg)
             return None
         
-    def save2Csv(self,df,filename):
+    def save2Csv(self,result):
         data = pd.DataFrame(result,columns = self.mycolumns)
         data.to_csv(self.brandName + '.csv', encoding=self.myencoding,index=True)
 
     def __init__(self,brandName,url):
+        
         self.brandName = brandName
         self.url = url
 
