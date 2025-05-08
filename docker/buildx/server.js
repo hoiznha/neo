@@ -7,7 +7,7 @@ const port = 8000
 
 var server = http.createServer(function (req,res){
     res.statusCode = 200;
-    res.writeHead(200, {'content-type':'text/plain'})
+    res.writeHead('content-type','text/plain')
     res.end('Hello from NodeJS in ${process.arch}!\n');
 });
 
