@@ -1,0 +1,11 @@
+## service definition
+version: "3.3"
+services:
+  webserver:
+    image: nginx
+    ports:
+      - 8000:80/tcp
+  redis:
+    image: redis
+      
+
