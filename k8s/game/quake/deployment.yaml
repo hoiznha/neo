@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quake
+  labels:
+    app: quake
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quake
+  template:
+    metadata:
+      labels:
+        app: quake
+    spec:
+      containers:
+      - name: quake
+        image: treyyoder/quakejs
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quake
+spec:
+  selector:
+    app: quake
+  ports:
+    - name: connect
+      nodePort : 30000
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    - name: multiplay
+      nodePort : 30100
+      port: 27960
+      protocol: TCP
+      targetPort: 27960
+  type: LoadBalancer
+  externalIPs:
+    - 3.39.239.198
