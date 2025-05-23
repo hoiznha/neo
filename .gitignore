@@ -50,3 +50,4 @@ docker/mongodb/mongo*
 
 nestjs
 
+**/*.json
