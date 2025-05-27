@@ -9,7 +9,7 @@ documents = SimpleDirectoryReader('data').load_data()
 
 embed_model = LangchainEmbedding(HuggingFaceEmbeddings(
     model_name="bongsoo/moco-sentencedistilbertV2.1",
-))
+))5
 print('-' * 50)
 print("Embedding Model initialized successfully")
 
