@@ -33,7 +33,7 @@ def remove_invalid_char_for_filename(input_str):
 
     return input_str
 
-def download_youtube_video(video_url, folder, filenmae=None):
+def download_youtube_video(video_url, folder, filename=None):
     _, title, _, _, _ = get_youtube_video_info(video_url)
     filenmae_no_ext = remove_invalid_char_for_filename(title)
     
