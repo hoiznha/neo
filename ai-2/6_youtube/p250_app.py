@@ -1,0 +1,36 @@
+from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
+from youtube_transcript_api.formatters import TextFormatter
+import textwrap
+
+def get_video_id(video_url):
+    video_id = video_url.split("v=")[1][:11]
+
+    return video_id
+
+
+
+video_url = "https://www.youtube.com/watch?v=pSJrML-TTmI"
+vidoe_id = get_video_id(video_url)
+
+try:
+    transcript_list = YouTubeTranscriptApi.list_transcripts(vidoe_id)
+
+    try:
+        transcript_obj = transcript_list.find_transcript(['ko'])
+    except:
+        transcript_obj = transcript_list.find_generated_transcript(['ko'])
+
+    transcript = transcript_obj.fetch()
+    text_formatterted = TextFormatter().format_transcript(transcript)
+    text_info = text_formatterted.replace('\n',"")
+
+    shorten_text_info = textwrap.shorten(text_info, width=150, placeholder='[...이하 생략...]')
+
+    print(shorten_text_info, end='\n')
+
+except TranscriptsDisabled:
+    print("이 영상은 자막이 비활성화 되어 있습니다.")
+except NoTranscriptFound:
+    print("한국어 자막이 없음")
+except Exception as e:
+    print(f'알수없는 오류 발생 : {e}')
