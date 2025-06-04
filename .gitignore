@@ -30,6 +30,11 @@ secret.json
 **/.venv
 **/__pycache__/
 **/secret.json
+**/model.safetensors
+**/llama.cpp
+**/gguf
+**/stf.json
+**/finetuned-*
 
 ## mongodb
 mongodb/backup
