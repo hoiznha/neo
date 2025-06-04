@@ -6,7 +6,7 @@ from youtube_transcript_api.formatters import TextFormatter
 
 def get_youtube_video_info(video_url):
     ydl_opts = {
-        'cookies' :'./data/cookies.txt',
+        # 'cookies' :'./data/cookies.txt',
         'noplaylist': True,
         'quiet': True,
         'no_warnings': True
