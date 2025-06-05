@@ -35,6 +35,7 @@ secret.json
 **/gguf
 **/stf.json
 **/finetuned-*
+.webui_secret_key
 
 ## mongodb
 mongodb/backup
